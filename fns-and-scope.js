@@ -1,29 +1,31 @@
 //Once you complete a problem, open up Chrome and check the answer in the console.
 
 
-var name = 'Tyler';
-//Create a function called isTyler that accepts name as it's only parameter.
-//If the argument you passed in is equal to 'Tyler', return true. If it's not, return false.
+// var name = 'Tyler';
+// //Create a function called isTyler that accepts name as it's only parameter.
+// //If the argument you passed in is equal to 'Tyler', return true. If it's not, return false.
 
-var isTyler = function(name) {
-    if (name === 'Tyler'){
-        return true;
-    }
-    else {
-        return false;
-    }
-}
+// var isTyler = function(name) {
+//     if (name === 'Tyler'){
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+// }
 
+// isTyler(name);
 //Next problem
 
 
 
 //Create a function called getName that uses prompt() to prompt the user for their name, then returns the name.
+var getName = function() {
+    var name = prompt("What is your name?");
+    return name;
+}
 
-
-  //Code Here
-
-
+getName();
 //Next Problem
 
 
