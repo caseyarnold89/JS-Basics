@@ -142,17 +142,17 @@ function fnCounter(fn, N) {
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) (Note: No unit test for this one because of the timeout)
 */
 
-  var counter = function() {
+  var counter = function(){
     for (var i=1; i<=5; i++) {
-      setTimeout(function timer(){
-          console.log( i );
-      }, i*1000);
+      setTimeout(function timer(i){
+          console.log(i);
+      }, i*1000,i);
     }
   };
 
 //Next Problem
 
-
+(function(){console.log(i)})(i)
 //   Make the following code work
 
 var funcArray = [
