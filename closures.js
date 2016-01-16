@@ -101,16 +101,18 @@ var codeEcho = codeFriend(codeLove);
   invoked 'N' number of times, return 'STOP'.
 */
 
-var fnCounter = function(fn, N) {
-    var i = 0;
-    if (i < N) {
-        i++;
-        return fn();
+function fnCounter(fn, N) {
+    var counter = 0;
+    return function () {
+        if (counter < N) {
+            counter++;
+            return fn();
+        }
+        else {
+            return 'STOP';
+        }   
     }
-    else {
-        return 'STOP';
-    }
-};
+}
 
 //Next Problem
 
@@ -127,30 +129,36 @@ var fnCounter = function(fn, N) {
 
   Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
 
-    //Answer Here
+ Create a timer that runs for 5 seconds and logs it every second.
 
 
   Now, run the function in your console and note what happpens.
 
   Was your answer right or wrong?
 
-    //Answer Here
+  I think so.
 
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) (Note: No unit test for this one because of the timeout)
 */
-
-    //Code Here
-
 
 
 //Next Problem
 
 
 
-/*
-  Make the following code work
 
+//   Make the following code work
+
+var funcArray = [
+    function() { return 0;},
+    function() { return 1;},
+    function() { return 2;},
+    function() { return 3;},
+    function() { return 4;},
+    function() { return 5;},
+]
+ 
   funcArray[0]() //0
   funcArray[1]() //1
   funcArray[2]() //2
@@ -158,7 +166,7 @@ var fnCounter = function(fn, N) {
   funcArray[4]() //4
   funcArray[5]() //5
 
-  *Hint: Don't let this fool you. Break down what's really happening here.
-*/
+//   *Hint: Don't let this fool you. Break down what's really happening here.
+// */
 
 
