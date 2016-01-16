@@ -129,23 +129,28 @@ function fnCounter(fn, N) {
 
   Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
 
- Create a timer that runs for 5 seconds and logs it every second.
+ Log 1, 2, 3, 4, 5...one number per second.
 
 
   Now, run the function in your console and note what happpens.
 
   Was your answer right or wrong?
 
-  I think so.
+  No, there was a timer that counted to 5, but it just logged 6 once.
 
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc) (Note: No unit test for this one because of the timeout)
 */
 
+  var counter = function() {
+    for (var i=1; i<=5; i++) {
+      setTimeout(function timer(){
+          console.log( i );
+      }, i*1000);
+    }
+  };
 
 //Next Problem
-
-
 
 
 //   Make the following code work
