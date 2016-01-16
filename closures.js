@@ -45,12 +45,20 @@ displayCall('435-215-9248');
   Write a function called makeCounter that makes the following code work properly.
 */
 
-  //Code Here
-  var count = makeCounter();
-  count(); // 1
-  count(); // 2
-  count(); // 3
-  count(); // 4
+var makeCounter = function() {
+    var theCount = 0;
+    function counter() {
+        theCount = theCount + 1;
+        return theCount;
+    }
+    return counter;
+}
+
+var count = makeCounter();
+count(); // 1
+count(); // 2
+count(); // 3
+count(); // 4
 
 
 
@@ -59,22 +67,50 @@ displayCall('435-215-9248');
 
 
 /*
-  Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend that accepts the first function as it's first parameter. The second function should return a new third function. Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that was passed in, but will only ever do so once (returns null after first invocation).
+  Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend that accepts the first function as it's first parameter. 
+  The second function should return a new third function. Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that 
+  was passed in, but will only ever do so once (returns null after first invocation).
 */
 
-  //Code Here
+var codeLove = function() {
+    return 'I love code';
+}
 
+var codeFriend = function(codeLove) {
+    var counter = 0;
+    return function() {
+        if (counter === 0) {    
+            counter++;
+            return codeLove();               
+        }
+        else {
+            return null;
+        }
+    } 
+}
 
+var codeEcho = codeFriend(codeLove);
 
 //Next Problem
 
 
 
 /*
-  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
+  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function 
+  and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been 
+  invoked 'N' number of times, return 'STOP'.
 */
 
-
+var fnCounter = function(fn, N) {
+    var i = 0;
+    if (i < N) {
+        i++;
+        return fn();
+    }
+    else {
+        return 'STOP';
+    }
+};
 
 //Next Problem
 
